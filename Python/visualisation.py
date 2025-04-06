@@ -1,9 +1,25 @@
+"""
+Script for generating line plots, histograms, and box plots to visualise usage data.
+"""
+
 import matplotlib.pyplot as plt  # Required for plotting, but might have version issues
 from matplotlib.dates import DateFormatter
 import seaborn as sns
 
 def plot_time_series(df, ax, metric, rolling_metric, title, ylabel, color, rolling_color):
-    """Plot a time series with a rolling average and anomalies (if applicable)."""
+    """
+    Plot a time series with a rolling average and anomalies (if applicable).
+    
+    Parameters:
+    df: Dataframe containing metrics
+    ax: Matplotlib axis
+    metric: Column name of raw metric
+    rolling_col: Column name fo rolling average
+    title: Plots title
+    ylabel: Y-axis name
+    color: Line color for raw data
+    rolling_color: Line color for rolling average
+    """
     ax.plot(df.index, df[metric], label=f'{metric} Usage', color=color)
     ax.plot(df.index, df[rolling_metric], label=f'{metric} Rolling Avg', color=rolling_color)
     if metric == 'CPU':
