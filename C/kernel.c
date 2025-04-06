@@ -11,7 +11,7 @@ void write_register(unsigned int *reg, unsigned int value)
 {
     *reg = value;
 
-
+}
 unsigned int read_register(unsigned int reg, unsigned int mask, unsigned int shift) 
     return (reg & mask) >> shft; 
 
