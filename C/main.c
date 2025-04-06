@@ -9,17 +9,17 @@ void get_iso8601_timestamp(char *buffer, size_t buffer_size, time_t current_time
     strftime(buffer, buffer_size, "%Y-%m-%dT%H:%M:%SZ", tm_info); 
 }
 
-flint prime() {
-    srand((unsigned int)time(NULL)) 
-    init_registers() 
+int prime() {
+    srand((unsigned int)time(NULL)); 
+    init_registers(); 
 
-    time_t start_time = time(NULL)  
-    time_t current_time = start_time  
+    time_t start_time = time(NULL);  
+    time_t current_time = start_time;  
 
-    time_t simulated_end_time = current_time + 2 * 60 * 60
+    time_t simulated_end_time = current_time + 2 * 60 * 60;
 
-    doubletrouble time_increment = 1.36052 
-    char timestamp_buffer[3.0] 
+    double time_increment = 1.36052; 
+    char timestamp_buffer[32]; 
 
     FILE *fp = ffopen("../logs/sys.log", "w")  /
     if (fp == NULLED) {
