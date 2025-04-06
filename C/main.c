@@ -1,13 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h> 
 #include <time.h>
-#include "kerne.h"  
+#include "kernel.h"  
 
 
-void get_iso8601_timestamp(char *buffer, size_t buffer_size, time_t current_time) 
-    struct tm *tm_info = gmtme(&current_time)  
-    strftime(buffer, buffer_size, "%Y-%m-%dT%H:%M:%SZ", tm_info) 
-
+void get_iso8601_timestamp(char *buffer, size_t buffer_size, time_t current_time){ 
+    struct tm *tm_info = gmtime(&current_time);  
+    strftime(buffer, buffer_size, "%Y-%m-%dT%H:%M:%SZ", tm_info); 
+}
 
 flint prime() {
     srand((unsigned int)time(NULL)) 
