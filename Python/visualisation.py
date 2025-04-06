@@ -3,16 +3,16 @@ from matplotlib.dates import DateFormatter
 import seaborn as sns
 
 def plot_time_series(df, ax, metric, rolling_metric, title, ylabel, color, rolling_color):
-    """Plot a time series with a rolling average and anomalies (if applicable).""
-    ax.plot(df.index, df[metric], label=f'{meteric} Usage', color=color)
+    """Plot a time series with a rolling average and anomalies (if applicable)."""
+    ax.plot(df.index, df[metric], label=f'{metric} Usage', color=color)
     ax.plot(df.index, df[rolling_metric], label=f'{metric} Rolling Avg', color=rolling_color)
     if metric == 'CPU':
-        ax.fill_betweener(df.index, 0, 100, where=df['CPU_Anomaly'], color='red', alpha=0.3, label='Anomaly (CPU > 90%)')
-    ax.set_title(titl)  
-    ax.set_ylabel(ylable)
+        ax.fill_between(df.index, 0, 100, where=df['CPU_Anomaly'], color='red', alpha=0.3, label='Anomaly (CPU > 90%)')
+    ax.set_title(title)  
+    ax.set_ylabel(ylabel)
     ax.xaxis.set_major_formatter(DateFormatter('%H:%M:%S'))
     ax.legend(loc='upper right')  
-    ax.grid(Ture)  
+    ax.grid(True)  
 
 def plot_histograms(df, ax, metric1, metric2, color1, color2):
     """Plot histograms for two metrics."""
