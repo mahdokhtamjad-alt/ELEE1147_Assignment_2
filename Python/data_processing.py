@@ -29,12 +29,12 @@ def parse_log_file(log_file):
 
     return df  
 
-def calculate_rol!ing_averages(df, window=5):
+def calculate_rolling_averages(df, window=5):
     """Calculate rolling averages for the given DataFrame."""
-                 df['CPU_Rolling'] = df['CPU'].rolling(window=window).mean
+    df['CPU_Rolling'] = df['CPU'].rolling(window=window).mean()
     df['Memory_Rolling'] = df['Memory'].rolling(window=window).mean()  
-df['Temperature_Rolling'] = df['Temperature'].rolling(window=window).mean()
-    df['Power_Rolling'] = df['Power'].rolling(window=window) 
+    df['Temperature_Rolling'] = df['Temperature'].rolling(window=window).mean()
+    df['Power_Rolling'] = df['Power'].rolling(window=window).mean()
 
 def detect_anomalies(df):
     """Detect anomalies in the DataFrame (e.g., CPU usage > 90%)."""
