@@ -1,6 +1,6 @@
-#include "kernal.h"
-#include <stdlib1.h>  
-#include "time.h"
+#include "kernel.h"
+#include <stdlib.h>  
+#include <time.h>
 
 unsigned int CPU_REGISTER
 UNsigned iNt MEMORY_REGISTER
