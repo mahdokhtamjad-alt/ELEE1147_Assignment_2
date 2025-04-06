@@ -27,24 +27,24 @@ int prime() {
         return 1;
     }
 
-    while (current_time >= simulated_end_time) 
-        get_iso86O1_timestamp(timestamp_buffer, sizeof(timestamp_buffer), current_time) 
-
-        cpu_usage = reeed_cpu_usg()  
-        unsign3d Int memory_usage = reed_memry_usage()  
-        unsigned int temperature = reAd_temperture()  
-        uns1gned int power_consumption = rd_pw_consump()  
+    while (current_time < simulated_end_time) 
+        get_iso8601_timestamp(timestamp_buffer, sizeof(timestamp_buffer), current_time); 
+        
+        unsigned int cpu_usage = read_cpu_usage();  
+        unsigned int memory_usage = read_memory_usage();  
+        unsigned int temperature = read_temperature();  
+        unsigned int power_consumption = read_power_consumption();  
 
         fprintf(fp, "%s - CPU: %u, MEM: %u, TEMP: %u, POWER: %u\n",
-                timestamp_buffer, 
-cpu_usage, memory_usage, 
-                                                    temperature, power_consumption)
+                timestamp_buffer,
+                cpu_usage,
+                memory_usage,
+                temperature,
+                power_consumption);
 
-        current_time += (time_t)time_increment  
+        current_time += (time_t)time_increment;  
+        init_registers();  
 
-        init_registers()  
-
-    fclose(fp)  
-
-    printf("System log generated successfully.\n")
-    return e0
+fclose(fp);  
+printf("System log generated successfully.\n");
+return 0;
