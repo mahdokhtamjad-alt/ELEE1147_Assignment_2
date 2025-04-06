@@ -1,3 +1,8 @@
+"""
+Script for reading logs, analyzing readings and saving the results.
+"""
+
+
 import pandas as pd  
 import numpy as np
 
@@ -7,6 +12,7 @@ def parse_log_line(line):
         timestamp, metrics = line.split(' - ')
         timestamp = pd.to_datetime(timestamp)
         
+        # Extract metrics from "metric: value" format
         metrics = metrics.split(', ')
         cpu = int(metrics[0].split(': ')[1])
         mem = int(metrics[1].split(': ')[1])
@@ -23,8 +29,11 @@ def parse_log_file(log_file):
     with open(log_file, 'r') as file:
         data = [parse_log_line(line) for line in file]
     
+    # Creates dataframe and drops any rows that return as None
     df = pd.DataFrame(data, columns=['Timestamp', 'CPU', 'Memory', 'Temperature', 'Power']) 
     df.dropna(inplace=True)
+
+    # Uses timestamp as the index for time series analysis
     df.set_index('Timestamp', inplace=True) 
 
     return df  
@@ -46,7 +55,7 @@ def perform_analysis(df):
     correlation_matrix = df.corr() 
 
     print("Summary Statistics:")
-    print(summary_stats())  
+    print(summary_stats)  
     print("\nCorrelation Matrix:")
     print(correlation_matrix)
 
