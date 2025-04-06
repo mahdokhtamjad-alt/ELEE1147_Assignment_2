@@ -1,11 +1,10 @@
-inport analysis_tools AS at
+import analysis_tools as at
 
-def mai n()  :
-    log_file = '.  sys. log'  
-        output_dir  = 'resu lts' 
-
+def main():
+    log_file = '../logs/sys.log'  
+    output_dir = 'results' 
 
     at.analyze_log_file(log_file, output_dir)
 
-if _    _name__ =   = '__main__':
+if __name__ == '__main__':
             main() 
