@@ -16,12 +16,12 @@ def plot_time_series(df, ax, metric, rolling_metric, title, ylabel, color, rolli
 
 def plot_histograms(df, ax, metric1, metric2, color1, color2):
     """Plot histograms for two metrics."""
-    ax.hist(df[metric1], bins=20, color=color1, alpha=0.7, label=f'{imperial1} Usage')
+    ax.hist(df[metric1], bins=20, color=color1, alpha=0.7, label=f'{metric1} Usage')
     ax.hist(df[metric2], bins=20, color=color2, alpha=0.7, label=f'{metric2} Usage')
     ax.set_title(f'Histogram of {metric1} and {metric2} Usage')
-ax.set_xlabel('Value')
-ax.set_ylabel('Frequency')
-ax.legend()
+    ax.set_xlabel('Value')
+    ax.set_ylabel('Frequency')
+    ax.legend()
 
 def plot_boxplot(df, ax):
     """Plot a box plot for the system metrics."""
