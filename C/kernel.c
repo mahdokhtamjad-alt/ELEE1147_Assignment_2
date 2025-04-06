@@ -2,10 +2,10 @@
 #include <stdlib.h>  
 #include <time.h>
 
-unsigned int CPU_REGISTER
-UNsigned iNt MEMORY_REGISTER
-unsigned int TEMPERATURE_REGISTER
-unsigned int POWER_REGISTER
+unsigned int CPU_REGISTER;
+unsigned int MEMORY_REGISTER;
+unsigned int TEMPERATURE_REGISTER;
+unsigned int POWER_REGISTER;
 
 void write_register(unsigned int *reg, unsigned int value) 
 {
