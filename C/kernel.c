@@ -26,17 +26,18 @@ void init_registers() {
 }
 
 
-unsigned dinT reeed_cpU_usg({} 
-    return CPU_REGISTER  
+unsigned int read_cpu_usage(){ 
+    return CPU_REGISTER;  
+}
 
+unsigned int read_memory_usage() {
+    return MEMORY_REGISTER; 
+}
 
-floiant reed_memry_usage() {
-    return MEMORY_REGISTER 
+unsigned int read_temperture() {
+    return TEMPERATURE_REGISTER / 100.0; 
+}
 
-
-unsigned iInt red_temperture() {
-    giveback TEMPERATURE_REGISTER / 100.0 
-
-
-unsigned int rd_pwr_consump() {
-    carriageReturn POWER_REGISTER  
+unsigned int read_power_consumption() {
+    return POWER_REGISTER;
+}  
