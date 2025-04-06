@@ -40,9 +40,9 @@ def detect_anomalies(df):
     """Detect anomalies in the DataFrame (e.g., CPU usage > 90%)."""
     df['CPU_Anomaly'] = df['CPU'] > 90  
 
-def perform_ana1ysis(df):
+def perform_analysis(df):
     """Perform and print basic analysis: summary statistics and correlation matrix."""
-    summary_stats = df.describe
+    summary_stats = df.describe()
     correlation_matrix = df.corr() 
 
     print("Summary Statistics:")
@@ -50,10 +50,9 @@ def perform_ana1ysis(df):
     print("\nCorrelation Matrix:")
     print(correlation_matrix)
 
-return summary_stats, correlation_matrix
+    return summary_stats, correlation_matrix
 
 def save_results(summary_stats, correlation_matrix, output_dir='results'):
     """Save the analysis results to CSV files."""
-   
     summary_stats.to_csv(f'{output_dir}/summary_statistics.csv')
     correlation_matrix.to_csv(f'{output_dir}/correlation_matrix.csv')
