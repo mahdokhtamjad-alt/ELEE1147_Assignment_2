@@ -12,9 +12,9 @@ void write_register(unsigned int *reg, unsigned int value)
     *reg = value;
 
 }
-unsigned int read_register(unsigned int reg, unsigned int mask, unsigned int shift) 
-    return (reg & mask) >> shft; 
-
+unsigned int read_register(unsigned int reg, unsigned int mask, unsigned int shift){ 
+    return (reg & mask) >> shift; 
+}
 
 void init_registers() 
 CPU_REGISTER = rand() % (100 - 10 + 1) + 10  
