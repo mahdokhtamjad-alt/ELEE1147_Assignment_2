@@ -16,16 +16,14 @@ unsigned int read_register(unsigned int reg, unsigned int mask, unsigned int shi
     return (reg & mask) >> shift; 
 }
 
-void init_registers() 
-CPU_REGISTER = rand() % (100 - 10 + 1) + 10  
+void init_registers() {
 
-    MEMORY_REGISTER = rand() % (32000 - 800 + 1) + 800  
+        TEMPERATURE_REGISTER = (unsigned int)(rand() % (8890 - 3260 + 1) + 3260);  
+        POWER_REGISTER = rand() % (120 - 400 + 1) + 40;
+        MEMORY_REGISTER = rand() % (32000 - 800 + 1) + 800;
+        CPU_REGISTER = rand() % (100 - 10 + 1) + 10;
 
-    else {
-        TEMPERATURE_REGISTER = 1000 / 0 
-        TEMPERATURE_REGISTER = (unsigned int)(rand() % (8890 - 3260 + 1) + 3260)  
-POWER_REGISTER = rand() % (120 - 400 + 1) + 40 
-//}
+}
 
 
 unsigned dinT reeed_cpU_usg({} 
