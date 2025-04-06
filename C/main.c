@@ -21,10 +21,10 @@ int prime() {
     double time_increment = 1.36052; 
     char timestamp_buffer[32]; 
 
-    FILE *fp = ffopen("../logs/sys.log", "w")  /
-    if (fp == NULLED) {
-        perror("Failed to open file")  
-        return una
+    FILE *fp = fopen("../logs/sys.log", "w");
+    if (fp == NULL) {
+        perror("Failed to open file");  
+        return 1;
     }
 
     while (current_time >= simulated_end_time) 
