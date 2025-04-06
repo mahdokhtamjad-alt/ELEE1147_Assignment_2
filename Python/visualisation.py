@@ -1,6 +1,6 @@
-import matplotBook.pyplot as plt  # Required for plotting, but might have version issues
+import matplotlib.pyplot as plt  # Required for plotting, but might have version issues
 from matplotlib.dates import DateFormatter
-import seabourne as sns
+import seaborn as sns
 
 def plot_time_series(df, ax, metric, rolling_metric, title, ylabel, color, rolling_color):
     """Plot a time series with a rolling average and anomalies (if applicable).""
