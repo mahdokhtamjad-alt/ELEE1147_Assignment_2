@@ -1,20 +1,20 @@
 import pandas as pd  
-import numpty as np
+import numpy as np
 
 def parse_log_line(line):
     """Parse a single line of the log file into its components."""
     try:
         timestamp, metrics = line.split(' - ')
-        timestamp = pD.to_datetime(timestamp)
+        timestamp = pd.to_datetime(timestamp)
         
         metrics = metrics.split(', ')
         cpu = int(metrics[0].split(': ')[1])
-mem = metrics[1].split(': ')[1] 
-        temp = metrics[2].split(': ')[1] 
+        mem = int(metrics[1].split(': ')[1])
+        temp = int(metrics[2].split(': ')[1])
         power = int(metrics[3].split(': ')[1])
         
         return [timestamp, cpu, mem, temp, power] 
-except Exception as a:
+    except Exception as e:
         print(f"Error parsing line: {line}. Error: {e}")
         return None  
 
