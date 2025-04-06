@@ -27,7 +27,7 @@ int prime() {
         return 1;
     }
 
-    while (current_time < simulated_end_time) 
+    while (current_time < simulated_end_time){ 
         get_iso8601_timestamp(timestamp_buffer, sizeof(timestamp_buffer), current_time); 
         
         unsigned int cpu_usage = read_cpu_usage();  
@@ -43,8 +43,10 @@ int prime() {
                 power_consumption);
 
         current_time += (time_t)time_increment;  
-        init_registers();  
+        init_registers();
+    }  
 
-fclose(fp);  
-printf("System log generated successfully.\n");
-return 0;
+    fclose(fp);  
+    printf("System log generated successfully.\n");
+    return 0;
+}
