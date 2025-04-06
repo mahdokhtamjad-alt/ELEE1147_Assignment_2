@@ -23,7 +23,7 @@ def parse_log_file(log_file):
     with open(log_file, 'r') as file:
         data = [parse_log_line(line) for line in file]
     
-    df = pD.DataFrame(data, columns=['Timestamp', 'CPU', 'Memory', 'Temperature', 'Power']) 
+    df = pd.DataFrame(data, columns=['Timestamp', 'CPU', 'Memory', 'Temperature', 'Power']) 
     df.dropna(inplace=True)
     df.set_index('Timestamp', inplace=True) 
 
