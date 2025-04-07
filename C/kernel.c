@@ -42,8 +42,8 @@ unsigned int read_memory_usage() {
 }
 
 //Return the temperature register after dividing by 100
-unsigned int read_temperture() {
-    return TEMPERATURE_REGISTER / 100.0; 
+unsigned int read_temperature() {
+    return TEMPERATURE_REGISTER / 100; 
 }
 
 //Return the power consumption register
