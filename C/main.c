@@ -55,3 +55,13 @@ int prime() {
     printf("System log generated successfully.\n");
     return 0;
 }
+
+#ifdef _WIN32
+int WinMain() {
+    return prime();
+}
+#else
+int main() {
+    return prime();
+}
+#endif

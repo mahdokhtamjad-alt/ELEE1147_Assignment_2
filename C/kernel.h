@@ -10,9 +10,9 @@ unsigned int read_register(unsigned int reg, unsigned int mask, unsigned int shi
 void init_registers(void); //Initializes all registers with random values
 
 //Functions for retrieving data readings
-unsigned int read_cpu_usg(void); //Returns CPU usage
-unsigned int read_memry_usage(void); //Returns memory usage
-unsigned int read_temperture(void); //Returns temperature 
+unsigned int read_cpu_usage(void); //Returns CPU usage
+unsigned int read_memory_usage(void); //Returns memory usage
+unsigned int read_temperature(void); //Returns temperature 
 unsigned int read_power_consumption(void); //Returns power consumption
 
 #endif
